@@ -5,8 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.TreeSet;
+import java.util.ArrayList;
 
 public class Exercises {
     /**
@@ -70,9 +70,15 @@ public class Exercises {
      */
     @NotNull
     @Contract(pure = true)
-    static List<Integer> findLargestNumbers(int[] arr, int k) {
-        List<Integer> list = new LinkedList<Integer>();
-        return list;
+    static ArrayList<Integer> findLargestNumbers(@NotNull int[] arr, int k) {
+        TreeSet<Integer> set =  new TreeSet<Integer>();
+        for (int n : arr) {
+            set.add(n);
+            if (set.size() > k) {
+                set.pollFirst();
+            }
+        }
+        return new ArrayList<Integer>(set);
     }
 
     /**

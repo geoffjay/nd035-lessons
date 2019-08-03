@@ -3,6 +3,9 @@ package com.nd035.lesson1;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ExercisesTest {
     @Test
     public void testFindDuplicate() {
@@ -23,11 +26,11 @@ public class ExercisesTest {
     }
 
     @Test
-    public void testFindLargestNums() {
-        Integer[] nums1 = (Integer[])Exercises.findLargestNumbers(new int[]{-1, 15, 59, 22, 6, 42, 45, 0}, 4).toArray();
-        Integer[] nums2 = (Integer[])Exercises.findLargestNumbers(new int[]{5, 10, 22, 100, 8}, 2).toArray();
-        Assert.assertArrayEquals(nums1, new Integer[]{});
-        Assert.assertArrayEquals(nums2, new Integer[]{});
+    public void testFindLargestNumbers() {
+        ArrayList<Integer> list1 = Exercises.findLargestNumbers(new int[]{-1, 15, 59, 22, 6, 42, 45, 0}, 4);
+        ArrayList<Integer> list2 = Exercises.findLargestNumbers(new int[]{5, 10, 22, 100, 8}, 2);
+        Assert.assertEquals(list1, new ArrayList<Integer>(Arrays.asList(22, 42, 45, 59)));
+        Assert.assertEquals(list2, new ArrayList<Integer>(Arrays.asList(22, 100)));
     }
 
     @Test
