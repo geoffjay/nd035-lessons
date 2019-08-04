@@ -96,6 +96,6 @@ public class Exercises {
     @NotNull
     @Contract(pure = true)
     static String translateNumberToWord(int number) {
-        return "hi";
+        return "just thinking about doing this one is annoying";
     }
 }
